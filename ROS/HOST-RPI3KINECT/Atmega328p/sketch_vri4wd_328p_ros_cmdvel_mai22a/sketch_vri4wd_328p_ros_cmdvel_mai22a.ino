@@ -1,4 +1,4 @@
-w/*
+/*
 Date: 23.05.2023
 Project: VRI 4WD Robot ROS
 Design: Carlos Eduardo Magrin/Eduardo Todt
