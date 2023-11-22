@@ -1,6 +1,6 @@
 # vri4wd
 
-![VRI4WD Mobile Robot Platform](https://github.com/VRI-UFPR/vri4wd/blob/main/sensorsVRI4WD_v4.pdf)
+![VRI4WD Mobile Robot Platform](https://github.com/VRI-UFPR/vri4wd/blob/main/isometric_vri4wd.png)
 
 VRI4WD MOBILE ROBOT PLATFORM
 
