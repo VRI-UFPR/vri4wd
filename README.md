@@ -1,5 +1,7 @@
 # vri4wd
 
+![VRI4WD Mobile Robot Platform](https://github.com/VRI-UFPR/vri4wd/blob/main/sensorsVRI4WD_v4.pdf)
+
 VRI4WD MOBILE ROBOT PLATFORM
 
 The VRI4WD mobile robot was developed to apply multi-sensors and locomotion in indoor and outdoor environments. 
