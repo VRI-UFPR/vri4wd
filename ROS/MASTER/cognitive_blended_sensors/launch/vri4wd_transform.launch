@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch> 
+  <!-- Transformation Configuration ... Setting Up the Relationships Between Coordinate Frames -->
+  <!--static_transform_publisher x y z yaw pitch roll frame_id child_frame_id period_in_ms -->
+  <!--x/y/z offset in meters and yaw/pitch/roll in radians -->
+  <!--http://wiki.ros.org/tf#static_transform_publisher -->
+
+
+ <!-- <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0 0 0 0 1 base_footprint imu 30 " /> --> <!--anterior 100-->
+  <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="-0.05 0 0.19 0 0 0 base_link imu 30 " /> <!--anterior 100-->
+  <node pkg="tf" type="static_transform_publisher" name="base_link_broadcaster" args="0 0 0.135 0 0 0 base_footprint base_link 50" />
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0 0 0.25 0 0 0 base_link laser 50" />
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_ultrasound" args="0.08 0 0.19 0 0 0 base_link ultrasound_link 50" />
+  <!--<node pkg="tf" type="static_transform_publisher" name="base_link_to_imu" args="-0.06 0 0.18 0 0 0 base_link imu_link 50" /> -->
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_kinect" args="0.02 0 0.15 0 0 0 base_link camera_link 50" />
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_ir" args="0.05 0 0.09 0 0 0 base_link ir_link 50" />
+  
+
+</launch>
