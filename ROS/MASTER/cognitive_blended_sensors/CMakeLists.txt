@@ -209,6 +209,9 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
+add_executable(cbs_level2_wlanlocalization src/cbs_level2_wlanlocalization.cpp)
+target_link_libraries(cbs_level2_wlanlocalization ${catkin_LIBRARIES})
+
 add_executable(cbs_level0_locomotion src/cbs_level0_locomotion.cpp)
 target_link_libraries(cbs_level0_locomotion ${catkin_LIBRARIES})
 
