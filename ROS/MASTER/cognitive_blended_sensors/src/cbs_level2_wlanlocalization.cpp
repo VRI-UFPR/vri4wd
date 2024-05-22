@@ -355,7 +355,7 @@ int main(int argc, char **argv){
 	
 	double sensor[20];
 
-	ros::init(argc, argv, "cbs_level2_wlanlocalization2");
+	ros::init(argc, argv, "cbs_level2_wlanlocalization");
 
 	ros::NodeHandle n;
 
