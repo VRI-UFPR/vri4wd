@@ -13,7 +13,7 @@ https://github.com/VRI-UFPR/ufpr-map
 #include "kbhit.h" 
 
 #define TAM_TRAIN 134 //training(rows)
-#define TAM_CLASS 1 //sensor readings(rows)
+#define TAM_CLASS 1 //sensor readings
 #define TAM_ATRIB 19 //features WITHOUT classifier (columns)
 #define TAM_ATRIB_AMB 20 //environment, path
 #define TAM_ATRIB_GRID 21 //landmarks
