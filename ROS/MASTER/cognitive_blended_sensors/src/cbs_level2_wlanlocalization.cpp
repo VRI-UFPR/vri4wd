@@ -15,10 +15,10 @@ https://github.com/VRI-UFPR/ufpr-map
 #define TAM_TRAIN 134 //training(rows)
 #define TAM_CLASS 1 //sensor readings
 #define TAM_ATRIB 19 //features WITHOUT classifier (columns)
-#define TAM_ATRIB_AMB 20 //environment, path
-#define TAM_ATRIB_GRID 21 //landmarks
-#define QTD_AMB 6 //number of environments (paths)
-#define QTD_GRID 123 //number of landmarks
+#define TAM_ATRIB_AMB 20 //path
+#define TAM_ATRIB_GRID 21 //environment
+#define QTD_AMB 6 //number of paths
+#define QTD_GRID 2 //number of environments
 
 #define TAM_K 3 //k size
 
@@ -157,7 +157,7 @@ int knn(double sensor[]){
   int j=0, p=0,v=0,cont=1,vot_emp=0,ambiente=0, votacao[QTD_AMB],votacao2[QTD_GRID];
   long int i=0,w=0,aux=0,aux2=0;
   int escolhido=0,escolhido2=0,temp=0,acerto=0,tempoc=0,tempot=0,tempoa=0,teste=0,r=0,tam_grid=0,idsonar=0,idwifi=0;
-  char train[150] = "/home/magrin/catkin_ws/src/cognitive_blended_sensors/dataset/wlan_fingerprintMap_rawData.csv", *psRetorno,linha[50000];
+  char train[150] = "/dataset/wlan_rssiMap_pathEnvironment_rawData.csv", *psRetorno,linha[50000];
   
   double treinamento[TAM_TRAIN][TAM_ATRIB_GRID], vizinhos[TAM_TRAIN][2],vizinhos2[TAM_TRAIN][2];
   double dist,dist2,result=0,result2=0,tempo=0;
@@ -304,7 +304,7 @@ int knn(double sensor[]){
 
     }
     ordena(vizinhos2);
-    //TRAIN LANDMARK DISTANCE
+    //TRAIN ENVIRONMENT DISTANCE
     
     for(r=0;r<TAM_TRAIN;r++)
     {
@@ -340,7 +340,7 @@ int knn(double sensor[]){
         escolhido2=(int)vizinhos2[0][1];
     }
 
- 	ROS_INFO("PATH: [%d] LANDMARK: [%d]", escolhido, escolhido2); 
+ 	ROS_INFO("PATH: [%d] ENVIRONMENT: [%d]", escolhido, escolhido2); 
 	
   grid_maior = escolhido;
 	grid_menor = escolhido2;
@@ -349,8 +349,6 @@ int knn(double sensor[]){
    
  }
  
-
-
 int main(int argc, char **argv){
 	
 	double sensor[20];
@@ -380,7 +378,7 @@ int main(int argc, char **argv){
 	ros::Subscriber sub19 = n.subscribe("/rssi19_wlan", 1000, subCallback19);
 
 	ros::Publisher pub_gridMaior = n.advertise<std_msgs::Int16>("/wlan_path", 1000 );
-	ros::Publisher pub_gridMenor = n.advertise<std_msgs::Int16>("/wlan_landmark", 1000 );
+	ros::Publisher pub_gridMenor = n.advertise<std_msgs::Int16>("/wlan_environment", 1000 );
 
 	ros::Rate loop_rate(10);
 
